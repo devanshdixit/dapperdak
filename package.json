@@ -4,14 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export && firebase deploy --only hosting:randomthoughts",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
+    "install": "^0.13.0",
     "next": "11.0.1",
+    "next-optimized-images": "^2.6.2",
+    "npm": "^7.19.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "17.0.2",
+    "react-router-bootstrap": "^0.25.0"
   },
   "devDependencies": {
     "eslint": "7.29.0",
