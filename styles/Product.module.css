@@ -1,0 +1,134 @@
+@font-face {
+  font-family: futura;
+  src: url(./futura/Futura\ Book\ font.ttf);
+}
+@font-face {
+  font-family: futura1;
+  src: url(./futura/futura\ light\ bt.ttf);
+}
+.container {
+  padding-top: 2%;
+}
+.col1 {
+  margin: 0 auto;
+}
+.col2 {
+  padding-left: 5%;
+  padding-top: 2%;
+}
+.price1 {
+  color: #34ffdb;
+  font-family: futura, sans-serif;
+  margin: 0 5px 0 0;
+  padding: 0 5px 0 0;
+  font-size: 18px;
+  padding-right: 5px;
+  display: inline-block;
+  text-decoration: line-through;
+  margin-right: 20px;
+  letter-spacing: 0.02em;
+}
+.price2 {
+  color: #34ffdb;
+  font-family: futura, sans-serif;
+  margin: 0 5px 0 0;
+  padding: 0 5px 0 0;
+  font-size: 18px;
+  padding-right: 5px;
+  display: inline-block;
+  margin-right: 5px;
+  letter-spacing: 0.05em;
+  margin-right: 20px;
+}
+.price3 {
+    color: white;
+    font-family: futura, sans-serif;
+    margin: 0 5px 0 0;
+    padding: 0 5px 0 0;
+    font-size: 18px;
+    padding-right: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    letter-spacing: 0.05em;
+  }
+  
+.btncart {
+  border: 1px solid white;
+  text-align: center;
+  margin-top: 55px;
+  vertical-align: bottom;
+  padding: 2% 0;
+  letter-spacing: 0.3em;
+  font-weight: 500;
+  line-height: 1.4em;
+  border-radius: 50px;
+}
+.btnbuy {
+  background-color: rgb(37, 126, 241);
+  text-align: center;
+  padding: 2% 0;
+  letter-spacing: 0.3em;
+  margin-top: 20px;
+  font-weight: 500;
+  line-height: 1.4em;
+  border-radius: 50px;
+}
+.btnbuy:hover,
+.btncart:hover {
+  background-color: white;
+  color: black;
+  font-size: 17px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.social {
+  font-family: futura1;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 45px;
+}
+.socialspan1 {
+  margin-right: 6%;
+}
+.socialspan1:hover {
+  transition-duration: 0.5s;
+  cursor: pointer;
+  color: grey;
+}
+.socialspan2 {
+  margin-right: 6%;
+}
+.socialspan2:hover {
+  transition-duration: 0.5s;
+  cursor: pointer;
+  color: grey;
+}
+.socialspan3 {
+  margin-right: 6%;
+}
+.socialspan3:hover {
+  color: grey;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.hdivider {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid white;
+}
+
+.item {
+  font-weight: 500;
+  line-height: 1.6em;
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1em;
+}
+@media (max-width: 600px) {
+  .col2 {
+    margin-top: 5%;
+  }
+}

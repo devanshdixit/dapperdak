@@ -1,0 +1,62 @@
+.submit:hover{
+    background-color: black;
+    color: white;
+}
+.submit{
+    background-color: #343A40;
+    margin-top: 5%;
+    color: rgb(43, 30, 30);
+}
+.btncart {
+  border: 1px solid white;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 10px;
+  vertical-align: bottom;
+  padding: 2% 0;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  line-height: 1.4em;
+  border-radius: 50px;
+}
+.btnbuy {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 2% 0;
+  color: black;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  margin-top: 20px;
+  font-weight: 700;
+  line-height: 1.4em;
+  border-radius: 50px;
+}
+.btnbuy:hover,
+.btncart:hover {
+  background-color: white;
+  color: black;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.formcontainer { width: 100%; max-width: 490px !important;  margin: 30px auto;     text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75em;
+  font-weight: 400;
+  padding: 5%;
+}
+
+.divider {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.divider hr {
+  margin: 7px 0px;
+  width: 35%;
+}
+
+.left { float: left; }
+
+.right { float: right; }

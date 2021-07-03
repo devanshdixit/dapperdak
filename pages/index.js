@@ -1,11 +1,18 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { Button, Card, Row, Col } from "react-bootstrap";
+import {  Card, Row, Col } from "react-bootstrap";
 import Link from "next/link";
 import Menu from "../components/navbar"
+import firebase from "firebase/app";
+import "firebase/auth";
+import config from "../components/credentials";
+import {
+	FirebaseAuthProvider
+  } from "@react-firebase/auth";
+
 export default function Home() {
   return (
+    <FirebaseAuthProvider firebase={firebase} {...config}>
     <div className={styles.container}>
       <Head>
         <title>Random Thoughts</title>
@@ -111,12 +118,11 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          
         </a>
       </footer>
     </div>
+    </FirebaseAuthProvider>
   );
 }
 const products = [
