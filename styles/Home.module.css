@@ -1,6 +1,10 @@
+@font-face {
+  font-family: logos;
+  src: url(./rr-beaver/beaver.ttf);
+}
+
 .container {
   padding: 0;
- 
 }
 .main{
   margin: 0 auto;
@@ -41,8 +45,9 @@
 .title {
   margin: 0;
   color: white;
-  font-size: 28px;
-  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 36px;
+  font-family: logos !important;
 }
 .card:hover{
   color: #eaeaea;
@@ -106,6 +111,26 @@
   margin-left: 0.5rem;
 }
 
+.cartcount{
+  background-color: red;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 80px;
+  margin-right: 20px;
+}
+
+.navlink{
+  padding: 10% 0px;
+  /* background-color: blue;//style={{ fontWeight: "100", letterSpacing: "0.07em" }} */
+  font-weight: 300;
+  font-size: 19px;
+  letter-spacing: 0.09em;
+  margin-right: 20px;
+}
+.navlink:hover a{
+  text-decoration: none;
+  color: rgb(197, 190, 180);
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -113,5 +138,9 @@
   }
   .card{
     margin: 3% auto;
+  }
+  .navlink{
+    margin: 2% 0px;
+    padding: 0px;
   }
 }

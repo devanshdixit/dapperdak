@@ -3,16 +3,14 @@ import styles from "../styles/Home.module.css";
 import {  Card, Row, Col } from "react-bootstrap";
 import Link from "next/link";
 import Menu from "../components/navbar"
-import firebase from "firebase/app";
-import "firebase/auth";
-import config from "../components/credentials";
-import {
-	FirebaseAuthProvider
-  } from "@react-firebase/auth";
 
 export default function Home() {
+    if (typeof window !== 'undefined') {
+        console.log('we are running on the client')
+    } else {
+        console.log('we are running on the server');
+    }
   return (
-    <FirebaseAuthProvider firebase={firebase} {...config}>
     <div className={styles.container}>
       <Head>
         <title>Random Thoughts</title>
@@ -113,16 +111,13 @@ export default function Home() {
       </main>
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          
+        >        
         </a>
       </footer>
     </div>
-    </FirebaseAuthProvider>
   );
 }
 const products = [
