@@ -9,7 +9,7 @@ import firebase from "firebase/app";
 import Head from "next/head";
 import "firebase/auth";
 import {
-	IfFirebaseUnAuthed, FirebaseAuthProvider
+	IfFirebaseUnAuthed, FirebaseAuthProvider, IfFirebaseAuthed
 } from "@react-firebase/auth";
 
 const SignIn = () => {
@@ -24,26 +24,24 @@ const SignIn = () => {
 						<div className="pt-2 form-group text-center mb-4">
 							<h2>Sign In</h2>
 						</div>
-						{/* <Form.Group controlId="signupEmail" className="mt-3">
-									<Form.Label>Email</Form.Label>
-									<Form.Control type="email" required placeholder="Enter email" onChange={(e) => { setEmail(e.target.value) }} />
-									<div className="invalid-feedback">Please fill out this field.</div>
-								</Form.Group>
-								<Form.Group controlId="signupPassword" className="mt-3">
-									<Form.Label>Password</Form.Label>
-									<Form.Control type="password" required maxLength="25" placeholder="At least 6 characters" length="40" onChange={(e) => { setPassword(e.target.value) }} />
-								</Form.Group>
-								<div className={styles.btncart} onClick={()=> {
-										console.log(email +','+password)
-									}} id="signupSubmit"  type="submit">Sign In</div> */}
-
 						<IfFirebaseUnAuthed>
 							{({ firebase }) => {
 								return <div className="divider">
 									<div className={styles.btnbuy} onClick={async () => {
 										try {
 											const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-											await firebase.auth().signInWithPopup(googleAuthProvider);
+											const user = await firebase.auth().signInWithPopup(googleAuthProvider);
+											const userdata = user['additionalUserInfo']['profile'];
+											addUser(userdata);
+											const data = await fetch('https://us-central1-unique-nuance-310113.cloudfunctions.net/user',
+												{
+													method: "POST",
+													body: JSON.stringify(userdata),
+
+												}).then((t) =>
+													t.json()
+												);
+											console.log(data);
 											router.push('/')
 										} catch (error) {
 											console.log(error);
@@ -52,6 +50,20 @@ const SignIn = () => {
 								</div>
 							}}
 						</IfFirebaseUnAuthed>
+						<IfFirebaseAuthed>
+						{({ firebase }) => {
+								return <div className="divider">
+									<div className={styles.btnbuy} onClick={async () => {
+										try {
+											await firebase.auth().signOut();
+											router.push('/')
+										} catch (error) {
+											console.error(error);
+										}
+									}} type="click"><FcGoogle fontSize="28" /> Sign Out</div>
+								</div>
+							}}
+						</IfFirebaseAuthed>
 						{/* <hr />
 								<p>Dont  have an account? <Link href="/signin">Sign in</Link></p> */}
 					</Form>
@@ -62,3 +74,17 @@ const SignIn = () => {
 }
 
 export default SignIn
+
+const addUser = (userData) => {
+    let user = []
+    if(typeof window !== undefined)
+    {
+        if (localStorage.getItem("user")) {
+            user = JSON.parse(localStorage.getItem("user"))
+        }
+        user.push({
+            ...userData,
+        })
+        localStorage.setItem("user",JSON.stringify(user))
+    }
+}

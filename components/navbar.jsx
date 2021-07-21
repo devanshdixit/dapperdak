@@ -25,9 +25,9 @@ const Menu = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className={styles.card}>
-           <div className={styles.navlink}><Link href="/cart">Cart </Link>{contextData.length !== 0 ?
+           <div className={styles.navlink}><Link href="/cart">Cart </Link>{contextData != undefined ?  contextData.length !== 0 ?
               (<span className={styles.cartcount}>{contextData.length}</span>)
-              : ''}</div>
+              : '' : ''}</div>
             <IfFirebaseUnAuthed>
               {({ firebase }) => (
                 <Fragment>
@@ -40,7 +40,7 @@ const Menu = () => {
                 <Nav.Link onClick={async () => {
                   await firebase.auth().signOut();
                   router.push('/')
-                }} className="text-white" style={{ fontWeight: "100", letterSpacing: "0.07em" }}>Sign Out</Nav.Link>
+                }} className={styles.navlink} style={{ fontWeight: "100", letterSpacing: "0.07em" }}>Sign Out</Nav.Link>
               )}
             </IfFirebaseAuthed>
           </Nav>

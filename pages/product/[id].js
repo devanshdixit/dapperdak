@@ -59,6 +59,7 @@ export default function Product({ product }) {
                 <div
                   className={styles.btncart}
                   onClick={() => {
+                    if (cart != undefined) {
                     var cartItem = cart.find(function (element) {
                       return element["id"] === product.id;
                     });
@@ -69,6 +70,11 @@ export default function Product({ product }) {
                     } else{
                       router.push("/cart");
                     }
+                  } else {
+                    setCart([{ id: product.id, data: product }]);
+                    addItemToCart(product);
+                    router.push("/cart");
+                  }
                   }}
                 >
                   ADD TO CART
@@ -96,7 +102,7 @@ export default function Product({ product }) {
 
 export async function getStaticProps({ params: { id } }) {
   const product_res = await fetch(
-    `http://localhost:5001/final-feef1/us-central1/helloWorld`
+    `https://us-central1-unique-nuance-310113.cloudfunctions.net/helloWorld`
   );
   const found = await product_res.json();
   const newId = parseInt(id) - 1;
@@ -110,7 +116,7 @@ export async function getStaticProps({ params: { id } }) {
 export async function getStaticPaths() {
   // Get external data from the file system, API, DB, etc.
   const products_res = await fetch(
-    `http://localhost:5001/final-feef1/us-central1/helloWorld`
+    `https://us-central1-unique-nuance-310113.cloudfunctions.net/helloWorld`
   );
   const products = await products_res.json();
   return {
