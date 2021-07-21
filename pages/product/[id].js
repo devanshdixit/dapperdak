@@ -7,9 +7,13 @@ import { Container, Col, Row } from "react-bootstrap";
 import { TiSocialTwitter } from "react-icons/ti";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import ReactImageMagnify from "react-image-magnify";
+import { useAppContext } from "../../components/state";
+import { addItemToCart } from "../../components/CartHelper";
 
 export default function Product({ product }) {
   const router = useRouter();
+  const { cart, setCart } = useAppContext();
+  let localcart = []
   return (
     <>
       <Menu />
@@ -37,9 +41,7 @@ export default function Product({ product }) {
                 />
               </Col>
               <Col className={styles.col2} md={6}>
-                <h1 className="mb-4 mt-3">
-                  MOONSHINE - SMART JACKET - RDKLU#24
-                </h1>
+                <h1 className="mb-4">MOONSHINE - SMART JACKET - RDKLU#24</h1>
                 <span className={styles.price1}> Rs. 3,331.00</span>
                 <span className={styles.price2}> Rs. 999.00 </span>
                 <span className={styles.price3}>Save 70%</span>
@@ -54,7 +56,29 @@ export default function Product({ product }) {
                   <li className={styles.item}>FAQ</li>
                 </ul>
 
-                <div className={styles.btncart}>ADD TO CART</div>
+                <div
+                  className={styles.btncart}
+                  onClick={() => {
+                    if (cart != undefined) {
+                    var cartItem = cart.find(function (element) {
+                      return element["id"] === product.id;
+                    });
+                    if (cartItem === undefined) {
+                      setCart([...cart, { id: product.id, data: product }]);
+                      addItemToCart(product);
+                      router.push("/cart");
+                    } else{
+                      router.push("/cart");
+                    }
+                  } else {
+                    setCart([{ id: product.id, data: product }]);
+                    addItemToCart(product);
+                    router.push("/cart");
+                  }
+                  }}
+                >
+                  ADD TO CART
+                </div>
                 <div className={styles.btnbuy}>BUY NOW</div>
                 <div className={styles.social}>
                   <span className={styles.socialspan1}>
@@ -78,7 +102,7 @@ export default function Product({ product }) {
 
 export async function getStaticProps({ params: { id } }) {
   const product_res = await fetch(
-    `http://localhost:5001/final-feef1/us-central1/helloWorld`
+    `https://us-central1-unique-nuance-310113.cloudfunctions.net/helloWorld`
   );
   const found = await product_res.json();
   const newId = parseInt(id) - 1;
@@ -92,7 +116,7 @@ export async function getStaticProps({ params: { id } }) {
 export async function getStaticPaths() {
   // Get external data from the file system, API, DB, etc.
   const products_res = await fetch(
-    `http://localhost:5001/final-feef1/us-central1/helloWorld`
+    `https://us-central1-unique-nuance-310113.cloudfunctions.net/helloWorld`
   );
   const products = await products_res.json();
   return {

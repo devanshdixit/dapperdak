@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "randomthoughts",
+    "site": "dapperdak",
     "public": "out",
     "ignore": [
       "firebase.json",
