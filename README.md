@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DapperDak
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/devanshdixit)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/devanshdixit) [![Made With Love](https://img.shields.io/badge/Made%20With-Love-orange.svg)](https://github.com/devanshdixit)
 
-## Getting Started
+Dapperdak is modern tiedye clothing line brand which promises to provide cool tishirts which make you a look apart:
+- Buy new design.
+- At affordable price.
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# Application Links
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deployed URL -> [https://dapperdak.vercel.app/](https://dapperdak.vercel.app/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<br/>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Tech Stack
 
-## Learn More
+<b>Frontned</b>: Nextjs
+<br>
+<b>Styling</b>: CSS and BootStrap
+<br>
+<b>Database</b>: Firebase - firestore
+<br>
+<b>Authentication and Authorisation</b>: Firebase
+<br>
+<b>Deployment</b>: Vercel
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+***Glad to see you here! Show some love by [starring](https://github.com/smilegupta/notes-yard-frontend/) this repo.***
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   [![LinkedIn](https://img.shields.io/static/v1.svg?label=connect&message=@devanshudixit&color=grey&logo=linkedin&style=flat&logoColor=white&colorA=blue)](https://www.linkedin.com/in/devanshudixit01/) [![Twitter](https://img.shields.io/static/v1.svg?label=connect&message=@devanshudixit&color=grey&logo=twitter&style=flat&logoColor=white&colorA=blue)](https://twitter.com/devanshdixit13)
